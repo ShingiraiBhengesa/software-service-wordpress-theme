@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.ciy_form {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.ciy_form h2 {
+    text-align: center;
+    margin: 20px;
+    font-size: 3em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.ciy_form_input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    width: 80%;
+    font-size: 1.2em;
+    border-radius: 10px;
+    border: 1px solid #333;
+}
+
+.ciy_form_textarea {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    width: 80%;
+    font-size: 1.2em;
+    border-radius: 10px;
+    height: 300px;
+    border: 1px solid #333;
+    font-weight: normal;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.ciy_contactform_button {
+    padding: 20px;
+    width: 50%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 10px;
+    background-color: #333;
+    color: #fff;
+}
+
+.ciy_contactform_button:hover {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #333;
+}
+
+/* Media Queries */
+@media screen and (max-width: 800px)
+{
+    .ciy_form h2 {
+        font-size: 2em;
+    }
+}

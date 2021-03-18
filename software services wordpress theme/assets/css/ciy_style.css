@@ -1,0 +1,372 @@
+:root {
+    --container-bg-color: #333;
+    --left-bg-color: rgba(224, 176, 255, 0.7);
+    --left-button-hover-color: rgba(161,11,11,0.3);
+    --right-bg-color: rgba(43,43,43,0.8);
+    --right-button-hover-color: rgba(92,92,92,0.3);
+    --hover-width: 75%;
+    --other-width: 25%;
+    --speed: 1000ms;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+html, body {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 4rem;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%);
+    white-space: nowrap;
+}
+
+.button {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    height: 2.5rem;
+    padding-top: 1.3rem;
+    width: 15rem;
+    text-align: center;
+    color: #fff;
+    border: solid #fff 0.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    transform: translate(-50%);
+}
+
+.split.left .button:hover {
+    background-color: var(--left-button-hover-color);
+    border-color: var(--left-button-hover-color);
+}
+
+.split.right .button:hover {
+    background-color: var(--right-button-hover-color);
+    border-color: var(--right-button-hover-color);
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: var(--container-bg-color);
+}
+
+.split {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.split.left {
+    left: 0;
+    background: center center no-repeat;
+    background-size: cover;
+}
+
+.split.left:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: var(--left-bg-color);
+}
+
+.split.right {
+    right: 0;
+    background: center center no-repeat;
+    background-size: cover;
+}
+
+.split.right:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: var(--right-bg-color);
+}
+
+.split.left, .split.right, .split.right:before, .split.left:before {
+    transition: var(--speed) all ease-in-out;
+}
+
+.hover-left .left {
+    width: var(--hover-width);
+}
+
+.hover-left .right {
+    width: var(--other-width);
+}
+
+.hover-left .right:before {
+    z-index: 2;
+}
+
+.hover-right .right {
+    width: var(--hover-width);
+}
+
+.hover-right .left {
+    width: var(--other-width);
+}
+
+.hover-right .left:before {
+    z-index: 2;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: var(--container-bg-color);
+    overflow: hidden;
+    height: 63px;
+}
+
+.navbar .navbar__logo a {
+    padding: 0;
+}
+
+.navbar__logo img {
+    height: 63px;
+    width: auto;
+    display: block;
+    float: left;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 20px 16px;
+    font-size: 17px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.navbar ul {
+    margin: 0;
+    list-style: none;
+}
+
+/* Mobile Navigation */
+.side__nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    opacity: 0.9;
+    overflow: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+.side__nav a {
+    padding: 10px 10px 10px 30px;
+    font-size: 22px;
+    color: #ccc;
+    display: block;
+    transition: 0.4s;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.side__nav a:hover {
+    color: #fff;
+}
+
+.side__nav .btn__close {
+    position: absolute;
+    top: 0;
+    right: 22px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.navbar__slider {
+    display: none;
+}
+
+/* Main Body */
+#main {
+    transition: margin-left 0.5s;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Pages */
+.showcase__img {
+    opacity: 0.8;
+    height: 75vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay {
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    background: var(--container-bg-color);
+}
+
+.showcase__header {
+    color: #fff;
+    font-size: 4em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.section {
+    text-align: center;
+    padding: 20px;
+    letter-spacing: 1px;
+}
+
+.ciy_content_standard {
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 1.2em;
+}
+
+.ciy_content_standard h2 {
+    margin: 20px;
+}
+
+.ciy_content_standard p {
+    margin-bottom: 20px;
+}
+
+/* === Footer === */
+footer {
+    background-color: var(--container-bg-color);
+    padding: 20px;
+    letter-spacing: 1px;
+    color: #fff;
+    display: grid;
+    gap: 30px;
+    grid-template-areas: 'navigation social logo';
+}
+
+.footer_nav {
+    grid-area: navigation;
+}
+
+.footer_nav ul {
+    list-style: none;
+}
+
+.footer_nav ul li {
+    padding: 10px;
+    text-align: center;
+}
+
+.footer_nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 17px;
+}
+
+.footer_nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer_social {
+    grid-area: social;
+    text-align: center;
+}
+
+.footer_social h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.footer_social a {
+    font-size: 36px;
+    color: #fff;
+    margin: 5px;
+}
+
+.footer_social a:hover {
+    font-size: 42px;
+    border-bottom: 1px solid #fff;
+}
+
+.footer_logo {
+    grid-area: logo;
+    text-align: center;
+}
+
+.footer_logo img {
+    width: 200px;
+}
+
+
+@media(max-width: 800px){
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .button {
+        width: 12rem;
+    }
+    /* Navigation Bar */
+    .navbar__nav {
+        display: none;
+    }
+
+    .navbar__logo_mob {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .navbar__logo_mob a {
+        padding: 0;
+    }
+
+    .navbar__logo_mob img {
+        height: 63px;
+        width: auto;
+        display: block;
+    }
+
+    .navbar__slider {
+        display: block;
+    }
+
+    /* Footer */
+    footer {
+        display: block;
+    }
+
+    .footer_nav, .footer_social, .footer_logo {
+        margin-bottom: 20px;
+    }
+}
